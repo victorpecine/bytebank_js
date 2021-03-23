@@ -1,0 +1,20 @@
+{
+  "name": "bytebank_js",
+  "version": "1.0.0",
+  "description": "Projeto do ByteBank",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorpecine/bytebank_js.git"
+  },
+  "author": "Victor Pecine",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/victorpecine/bytebank_js/issues"
+  },
+  "homepage": "https://github.com/victorpecine/bytebank_js#readme"
+}
