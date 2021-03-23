@@ -1,6 +1,8 @@
 // Arquivo que representa uma classe
 export class ContaCorrente {
     agencia;
+    cliente;
+
     _saldo = 0; // atributo privado
 
     sacar(valor) {
@@ -11,6 +13,7 @@ export class ContaCorrente {
         this._saldo -= valor;
         console.log(`\nRealizado o saque de R$ ${valor}`);
         console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
+        return valor;
     }
 
     depositar(valor) {
@@ -20,5 +23,11 @@ export class ContaCorrente {
         this._saldo += valor;
         console.log(`\nDepositado o valor de R$ ${valor}`);
         console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
+        return valor;
+    }
+
+    transferir(valor, contaQueRecebe) {
+        const valorTransferido = this.sacar(valor);
+        contaQueRecebe.depositar(valor);
     }
 }
