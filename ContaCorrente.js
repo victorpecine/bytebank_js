@@ -11,8 +11,8 @@ export class ContaCorrente {
             return;
         }
         this._saldo -= valor;
-        console.log(`\nRealizado o saque de R$ ${valor}`);
-        console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
+        // console.log(`\nRealizado o saque de R$ ${valor}`);
+        // console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
         return valor;
     }
 
@@ -21,13 +21,18 @@ export class ContaCorrente {
             return;
         }
         this._saldo += valor;
-        console.log(`\nDepositado o valor de R$ ${valor}`);
-        console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
+        // console.log(`\nDepositado o valor de R$ ${valor}`);
+        // console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
         return valor;
     }
 
     transferir(valorSacado, contaQueRecebe) {
+        if (valorSacado > this._saldo) {
+            console.log(`\nNão há saldo suficiente para fazer a transferência`)
+            return;
+        }
         const valorTransferido = this.sacar(valorSacado);
         contaQueRecebe.depositar(valorTransferido);
+        console.log(`\nTransferido o valor de R$ ${valorTransferido}`)
     }
 }
