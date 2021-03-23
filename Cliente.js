@@ -1,8 +1,4 @@
-// Arquivo que representa uma classe
 export class Cliente {
-    nome;
-    _cpf;
-
     get cpf() {
         return this._cpf;
     }
