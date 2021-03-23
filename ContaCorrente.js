@@ -1,9 +1,25 @@
+import { Cliente } from "./Cliente.js";
+
 // Arquivo que representa uma classe
 export class ContaCorrente {
     agencia;
-    cliente;
+    _cliente;
+
+    set _cliente(novoCliente) {
+        if (novoCliente instanceof Cliente) {
+            this._cliente = novoCliente;
+        }
+    }
+
+    get _cliente() {
+        return this._cliente;
+    }
 
     _saldo = 0; // atributo privado
+
+    get saldo() {
+        return this._saldo
+    }
 
     sacar(valor) {
         if (this._saldo <= valor) {
@@ -21,7 +37,7 @@ export class ContaCorrente {
             return;
         }
         this._saldo += valor;
-        // console.log(`\nDepositado o valor de R$ ${valor}`);
+        console.log(`\nDepositado o valor de R$ ${valor}`);
         // console.log(`\n>>> Saldo atual: R$ ${this._saldo} <<<`);
         return valor;
     }
