@@ -2,7 +2,7 @@
 // utilizada apenas para herança
 // não deve ser chamada diretamente
 export class Conta {
-    constructor (saldoInicial, cliente, agencia) {
+    constructor(saldoInicial, cliente, agencia) {
         if (this.constructor == Conta) {
             throw new Error ('É necessário definir um tipo de conta');
         }
